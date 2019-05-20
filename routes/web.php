@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+//interface de connexion
+//Route::get('/', "ClientController@login");
+
+//index de la page
+Route::get('/', "ClientController@index");
