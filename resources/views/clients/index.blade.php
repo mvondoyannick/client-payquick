@@ -6,7 +6,8 @@
       <div class="col-md-8">
         <div class="card">
           <div class="header">
-            <h4 class="title">Identifcation utilisateur</h4>
+            <h4 class="title">Bonjour {{Session::get('name')}} {{Session::get('second_name')}}</h4>
+            <small>Vos dernieres informations sur la plateforme</small>
           </div>
           <div class="content">
             <form>
@@ -101,16 +102,16 @@
           <div class="content">
             <div class="author">
               <a href="#">
-                <img class="avatar border-gray" src="assets/img/faces/face-3.jpg" alt="...">
+                <img class="avatar border-gray" src="{{url('assets/img/faces/face-3.jpg')}}" alt="...">
 
-                <h4 class="title">Mike Andrew<br>
-                  <small>michael24</small>
+                <h4 class="title">{{Session::get('name')}} {{Session::get('second_name')}}<br>
+                  <small>Phone : {{Session::get('phone')}}</small>
                 </h4>
               </a>
             </div>
-            <p class="description text-center"> "Lamborghini Mercy <br>
-              Your chick she so thirsty <br>
-              I'm in that two seat Lambo"
+            <p class="description text-center">Empreinte : {{Session::get('authentication_token')}} <br>
+              Empreinte : {{Session::get('authentication_token')}} <br>
+              Montant du compte : {{Session::get('authentication_token')}}
             </p>
           </div>
           <hr>

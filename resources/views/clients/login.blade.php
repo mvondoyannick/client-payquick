@@ -33,23 +33,22 @@
   <link href="{{url('assets/css/signin.css')}}" rel="stylesheet">
 </head>
 <body class="text-center">
-@include('flash-message')
-<form class="form-signin" action="{{url('/auth')}}" method="post">
-  {{csrf_field()}}
-  <img class="mb-4" src="{{url('assets/img/bootstrap-solid.svg')}}" alt="" width="72" height="72">
-  <h1 class="h3 mb-3 font-weight-normal">Identifiez-vous sur PAYQUICK</h1>
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="tel" id="inputEmail" name="phone" class="form-control" placeholder="Munémro de téléphone" required="true" autofocus="true">
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-  <div class="checkbox mb-3">
-    <label>
-      <input type="checkbox" value="remember-me"> Remember me
-    </label>
-  </div>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-  <p class="mt-5 mb-3 text-muted">© 2017-2019</p>
-</form>
+  @include('flash-message')
+  <form class="form-signin" action="{{url('/auth')}}" method="post">
+    {{csrf_field()}}
+    <img class="mb-4" src="{{url('assets/img/bootstrap-solid.svg')}}" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Identifiez-vous</h1>
+    <br>
+    <label for="inputEmail" class="sr-only">Numero de téléphone</label>
+    <input type="tel" id="inputEmail" name="phone" class="form-control" placeholder="Nunémro de téléphone" required="true" autofocus="true">
+    <br><br>
+    <label for="inputPassword" class="sr-only">Mot de passe</label>
+    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+    <br>
+    <br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <p class="mt-5 mb-3 text-muted">© 2017-2019</p>
+  </form>
 
 
 </body>

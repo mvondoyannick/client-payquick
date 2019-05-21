@@ -1,70 +1,41 @@
 @extends('app')
 
-  @section('content')
+@section('content')
 
     <div class="col-md-12">
-      <div class="card">
-        <div class="header">
-          <h4 class="title">Striped Table with Hover</h4>
-          <p class="category">Here is a subtitle for this table</p>
-        </div>
-        <div class="content table-responsive table-full-width">
-          <table class="table table-hover table-striped">
-            <thead>
-            <tr><th>ID</th>
-              <th>Name</th>
-              <th>Salary</th>
-              <th>Country</th>
-              <th>City</th>
-            </tr></thead>
-            <tbody>
-            <tr>
-              <td>1</td>
-              <td>Dakota Rice</td>
-              <td>$36,738</td>
-              <td>Niger</td>
-              <td>Oud-Turnhout</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Minerva Hooper</td>
-              <td>$23,789</td>
-              <td>Curaçao</td>
-              <td>Sinaai-Waas</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Sage Rodriguez</td>
-              <td>$56,142</td>
-              <td>Netherlands</td>
-              <td>Baileux</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Philip Chaney</td>
-              <td>$38,735</td>
-              <td>Korea, South</td>
-              <td>Overland Park</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Doris Greene</td>
-              <td>$63,542</td>
-              <td>Malawi</td>
-              <td>Feldkirchen in Kärnten</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>Mason Porter</td>
-              <td>$78,615</td>
-              <td>Chile</td>
-              <td>Gloucester</td>
-            </tr>
-            </tbody>
-          </table>
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Striped Table with Hover</h4>
+                <p class="category">Here is a subtitle for this table</p>
+            </div>
+            <div class="content table-responsive table-full-width">
+                <table class="table table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Date</th>
+                        <th>Montant</th>
+                        <th>Action</th>
+                        <th>Code transaction</th>
+                        <th>Adresse Ip</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($data as $logs)
+                    <tr>
+                        <td>{{$logs->id}}</td>
+                        <td>{{$logs->created_at}}</td>
+                        <td>{{$logs->amount}} F CFA</td>
+                        <td>{{$logs->flag}}</td>
+                        <td>{{$logs->code}}</td>
+                        <td>{{$logs->ip}}</td>
+                    </tr>
+                    @endforeach
+                    </tbody>
+                </table>
 
+            </div>
         </div>
-      </div>
     </div>
 
-  @endsection
+@endsection
