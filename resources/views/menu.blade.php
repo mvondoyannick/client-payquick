@@ -1,44 +1,38 @@
 <ul class="nav">
     <li class="active">
-        <a href="dashboard.html">
+        <a href="{{url('/')}}">
             <i class="pe-7s-graph"></i>
             <p>Accueil</p>
         </a>
     </li>
     <li>
-        <a href="user.html">
+        <a href="{{url('/user/profile')}}">
             <i class="pe-7s-user"></i>
             <p>Mon Profile</p>
         </a>
     </li>
     <li>
-        <a href="table.html">
-            <i class="pe-7s-note2"></i>
+        <a href="{{url('/user/logs')}}">
+            <i class="pe-7s-timer"></i>
             <p>Hitorique</p>
         </a>
     </li>
     <li>
-        <a href="typography.html">
-            <i class="pe-7s-news-paper"></i>
+        <a href="{{url('/user/parameters/security')}}">
+            <i class="pe-7s-shield"></i>
             <p>Securité</p>
         </a>
     </li>
     <li>
-        <a href="icons.html">
-            <i class="pe-7s-science"></i>
-            <p>Icons</p>
-        </a>
-    </li>
-    <li>
-        <a href="maps.html">
+        <a href="{{url('/user/maps')}}">
             <i class="pe-7s-map-marker"></i>
-            <p>Maps</p>
+            <p>Cartographie</p>
         </a>
     </li>
-    <li>
-        <a href="notifications.html">
-            <i class="pe-7s-bell"></i>
-            <p>Notifications</p>
+    <li class="active-pro">
+        <a href="{{url('/user/parameters')}}">
+            <i class="pe-7s-config"></i>
+            <p>Parametres</p>
         </a>
     </li>
 </ul>

@@ -20,3 +20,21 @@
 
 //index de la page
 Route::get('/', "ClientController@index");
+
+//login
+Route::get('/login', "ClientController@login");
+
+//le profile de utilisateur
+Route::get('/user/profile', "ClientController@profile");
+
+//historique de l'utilisateur
+Route::get('/user/logs', "ClientController@logs");
+
+//la securité sur le compte utilisateur
+Route::get('/user/parameters/security', "ClientController@security");
+
+//information d cartographie d l'utilisateur
+Route::get('/user/maps', "ClientController@maps");
+
+//parametre du compte utilisateur
+Route::get('/user/parameters', "ClientController@parameters");
