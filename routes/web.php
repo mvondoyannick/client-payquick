@@ -23,6 +23,8 @@ Route::get('/', "ClientController@index");
 
 //login
 Route::get('/login', "ClientController@login");
+Route::post('/auth', "ClientController@auth");
+Route::post('/auth_code_sms', 'ClientController@auth_code_sms');
 
 //le profile de utilisateur
 Route::get('/user/profile', "ClientController@profile");

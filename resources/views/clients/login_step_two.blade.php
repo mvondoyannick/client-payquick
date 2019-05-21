@@ -34,14 +34,13 @@
 </head>
 <body class="text-center">
 @include('flash-message')
-<form class="form-signin" action="{{url('/auth')}}" method="post">
+<form class="form-signin" action="{{url('/auth_code_sms')}}" method="post">
   {{csrf_field()}}
   <img class="mb-4" src="{{url('assets/img/bootstrap-solid.svg')}}" alt="" width="72" height="72">
-  <h1 class="h3 mb-3 font-weight-normal">Identifiez-vous sur PAYQUICK</h1>
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="tel" id="inputEmail" name="phone" class="form-control" placeholder="Munémro de téléphone" required="true" autofocus="true">
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+  <h1 class="h3 mb-3 font-weight-normal">CODE RECU PAR SMS</h1>
+  <label for="inputEmail" class="sr-only">Mot de passe recu par SMS</label>
+  <input type="number" id="inputEmail" name="code" class="form-control" placeholder="Code SMS" required="true" autofocus="true">
+  <input type="hidden" name="phone" value="{{Session::get('phone')}}">
   <div class="checkbox mb-3">
     <label>
       <input type="checkbox" value="remember-me"> Remember me
