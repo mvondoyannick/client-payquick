@@ -20,7 +20,7 @@ class ClientController extends Controller
 
     public function auth(Request $request){
         $client = new Client();
-        $query = $client->post("http://localhost:3000/api/v1/customer/auth/signin", [
+        $query = $client->post("https://payquick-develop.herokuapp.com/api/v1/customer/auth/signin", [
             'form_params' => [
                 'phone'     => $request->phone,
                 'password'  => $request->password
@@ -39,7 +39,7 @@ class ClientController extends Controller
 
     public function auth_code_sms(Request $request){
         $client = new Client();
-        $query  = $client->post("http://localhost:3000/api/v1/customer/auth/signin/validate", [
+        $query  = $client->post("https://payquick-develop.herokuapp.com/api/v1/customer/auth/signin/validate", [
             'form_params' => [
                 'code'  => $request->code,
                 'phone' => $request->phone
@@ -53,8 +53,11 @@ class ClientController extends Controller
             session(['phone'=>$content->message->phone]);
             session(['email'=>$content->message->email]);
             session(['authentication_token'=>$content->message->authentication_token]);
+            session(['created_at'=>$content->message->created_at]);
+            session(['cni'=>$content->message->cni]);
+            session(['status'=>$content->message->two_fa]);
             //return view('clients.index')->with('success', 'Welcome');
-            return redirect()->action('ClientController@index', ['token'=>$content->message->authentication_token]);
+            return redirect()->action('ClientController@index', ['token'=>$content->message->authentication_token])->with(['donne'=>$content->message]);
         }
     }
 
@@ -74,7 +77,7 @@ class ClientController extends Controller
 
     public function logs(Request $request){
         $client = new Client();
-        $query = $client->get('http://localhost:3000/api/v1/client/logs/'.session('authentication_token'), [
+        $query = $client->get('https://payquick-develop.herokuapp.com/api/v1/client/logs/'.session('authentication_token'), [
             'form_params'=> [
                 'token' => session('authentication_token')
             ]

@@ -33,7 +33,6 @@
   <link href="{{url('assets/css/signin.css')}}" rel="stylesheet">
 </head>
 <body class="text-center">
-  @include('flash-message')
   <form class="form-signin" action="{{url('/auth')}}" method="post">
     {{csrf_field()}}
     <img class="mb-4" src="{{url('assets/img/bootstrap-solid.svg')}}" alt="" width="72" height="72">
